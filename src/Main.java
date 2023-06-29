@@ -15,32 +15,39 @@ public class Main {
         library.addBook(book3);
         library.addBook(book4);
         //Shfaqja e te gjitha librave nga databaza
-        library.getAllBooks();
+//        library.getAllBooks();
+//
+//        //Heqja e librave
+//        library.removeBook(book1);
+//
+//        System.out.println("------------");
+//
+//        //Rezervimi i librit nga useri, rezervimi i librit per se dyti here, rezervimi i nje libri qe nuk eshte ne liste
+//        user1.reserveBook(book2);
+//        user1.reserveBook(book2);
+//        user1.reserveBook(book1);
+//
+//        System.out.println("-------------");
+//
+//        //Kerkimi i librave me ane te kritereve te ndryshme
+//        System.out.println("\nAll books with same title:");
+//        library.searchBookByTitle("SAMETITLE");
+//        System.out.println("\nAll books with same author:");
+//        library.searchBookByAuthor("sameauthor");
+//        System.out.println("\nAll books with same genre:");
+//        library.searchBookByGenre("SaMeGeNrE");
+//        System.out.println("\nISBN search:");
+//        library.searchBookByISBN("UniqueISBN1");
+//
+//        //Fshirja e te gjitha librave nga databaza.
+//        System.out.println("----------------------");
+//        library.removeAllBooks();
 
-        //Heqja e librave
-        library.removeBook(book1);
-
-        System.out.println("------------");
-
-        //Rezervimi i librit nga useri, rezervimi i librit per se dyti here, rezervimi i nje libri qe nuk eshte ne liste
-        user1.reserveBook(book2);
-        user1.reserveBook(book2);
         user1.reserveBook(book1);
+        user1.borrowBook(book1);
+        user1.returnBook(book1);
 
-        System.out.println("-------------");
-
-        //Kerkimi i librave me ane te kritereve te ndryshme
-        System.out.println("\nAll books with same title:");
-        library.searchBookByTitle("SAMETITLE");
-        System.out.println("\nAll books with same author:");
-        library.searchBookByAuthor("sameauthor");
-        System.out.println("\nAll books with same genre:");
-        library.searchBookByGenre("SaMeGeNrE");
-        System.out.println("\nISBN search:");
-        library.searchBookByISBN("UniqueISBN1");
-
-        //Fshirja e te gjitha librave nga databaza.
-        System.out.println("----------------------");
-        library.removeAllBooks();
+        user1.borrowBook(book2);
+        user1.returnBook(book2);
     }
 }

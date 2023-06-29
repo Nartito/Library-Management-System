@@ -59,4 +59,36 @@ public class User {
     }
 
     //TODO: borrowBook(), override toString()
+    public void borrowBook(Book book) {
+        if (!reservedBooks.contains(book)) {
+            System.out.println("Sorry, the book is not available for borrowing. You need to reserve the book first.");
+        } else {
+            borrowedBooks.add(new BorrowedBook(book, this));
+            reservedBooks.remove(book);
+            System.out.println("Book borrowed successfully.");
+        }
+    }
+
+//    public void returnBook(Book book){
+//        if(borrowedBooks.contains(book)){
+//            borrowedBooks.remove(book);
+//            book.setAvailability(true);
+//            System.out.println("Book returned to library.");
+//        } else {
+//            System.out.println("You have not borrowed this book");
+//        }
+//    }
+
+    public void returnBook(Book book) {
+        for (BorrowedBook borrowedBook : borrowedBooks) {
+            if (borrowedBook.getBook().equals(book)) {
+                borrowedBooks.remove(borrowedBook);
+                book.setAvailability(true);
+                System.out.println("Book returned successfully.");
+                return;
+            }
+        }
+        System.out.println("You have not borrowed this book.");
+
+    }
 }
