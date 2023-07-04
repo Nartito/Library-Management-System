@@ -64,8 +64,21 @@ public class Book {
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
+
     @Override
     public String toString(){
-        return "ISBN=(" + ISBN + ")" + " " + title + " by " + author + " | Genre: " + genre + " | " + releaseYear;
+        return "ISBN=("
+                + ISBN
+                + ")"
+                + " "
+                + title
+                + " by "
+                + author
+                + " | Genre: "
+                + genre
+                + " | "
+                + releaseYear
+                + " - AVAILABLE: "
+                + availability;
     }
 }

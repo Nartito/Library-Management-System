@@ -1,9 +1,34 @@
 import java.util.ArrayList;
+import java.util.Comparator;
+
 //TODO: Veprimet ne Librari do te jene te ndryshme ne baze te rolit te User'it (Admin, RegularGuest)
 public class Library {
     private static final ArrayList<Book> books = new ArrayList<>();
+    private static final ArrayList<User> listofUsers = new ArrayList<>();
+    private static final ArrayList<Guest> listofGuests = new ArrayList<>();
+
     public static ArrayList<Book> getBooks() {
         return books;
+    }
+
+    public static ArrayList<User> getListofUsers() {
+        return listofUsers;
+    }
+
+    public static ArrayList<Guest> getListofGuests() {
+        return listofGuests;
+    }
+
+    public void getAllUsers(){
+        for (User user: listofUsers) {
+            System.out.println(user);
+        }
+    }
+
+    public void getAllGuests(){
+        for (Guest guest: listofGuests){
+            System.out.println(guest);
+        }
     }
 
     //Metoda per te shtuar nje liber ne librari. Nese nje liber ndodhet paraprakisht ne liste, nuk shtohet duplicate.
@@ -12,6 +37,8 @@ public class Library {
             System.out.println("Book has already been added!");
         } else {
             books.add(book);
+            //Sahere qe shtohet nje liber ne Librari, ArrayLista sortohet prej titujve.
+            books.sort(Comparator.comparing(Book::getTitle));
             System.out.println("Book has been added successfully.");
         }
     }
@@ -28,8 +55,7 @@ public class Library {
 
     //Metoda per te pare te gjitha librat ne librari.
     public void getAllBooks(){
-        for (Book book: books
-             ) {
+        for (Book book: books) {
             System.out.println(book);
         }
     }
