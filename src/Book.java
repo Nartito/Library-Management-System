@@ -53,16 +53,16 @@ public class Book {
         return releaseYear;
     }
 
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
     public boolean isAvailable(){
         return availability;
     }
 
     public void setAvailability(boolean availability){
         this.availability = availability;
-    }
-
-    public void setReleaseYear(int releaseYear) {
-        this.releaseYear = releaseYear;
     }
 
     @Override

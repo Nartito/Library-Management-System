@@ -3,7 +3,6 @@ import java.time.LocalDate;
 public class BorrowedBook {
     private Book book;
     private Guest user;
-    //TODO: Shto nje afat kohor per t'u kthyer libri.
     LocalDate dateBorrowed;
     LocalDate returnBy;
 

@@ -8,14 +8,15 @@ public class Main {
         Book book3 = new Book("UniqueISBN2", "SameTitle", "SameAuthor", "Genre4", 2021);
         Book book4 = new Book("UniqueISBN3", "SameTitle", "Author4", "SameGenre", 2020);
         Guest user1 = new Guest("Guest1 Filan Fisteku", "202151626", "password123", User.Role.GUEST);
+        Admin admin1 = new Admin("Admin Nart Shufta", "120101", "abcdefg", User.Role.ADMIN);
         //Provojme metodat e ndryshme
         //Shtimi i librave
-        library.addBook(book1);
-        library.addBook(book2);
-        library.addBook(book3);
-        library.addBook(book4);
+        admin1.addBook(book1);
+        admin1.addBook(book2);
+        admin1.addBook(book3);
+        admin1.addBook(book4);
         //Shfaqja e te gjitha librave nga databaza
-//        library.getAllBooks();
+//   library.getAllBooks();
 //
 //        //Heqja e librave
 //        library.removeBook(book1);
@@ -47,9 +48,8 @@ public class Main {
         user1.borrowBook(book1);
         user1.returnBook(book1);
 
-        Admin admin1 = new Admin("Admin Nart Shufta", "120101", "abcdefg", User.Role.ADMIN);
-        library.getAllUsers();
-        library.getAllGuests();
+        admin1.getAllUsers();
+        admin1.getAllGuests();
 
         admin1.getBorrowedBooks();
 

@@ -6,7 +6,7 @@ public class Guest extends User{
     private final ArrayList<Book> reservedBooks;
     private final ArrayList<BorrowedBook> borrowedBooks;
 
-    //Poashtu, kur krijohet nje GUEST i ri, Librarise i shtohet ne ArrayList listofGuests kjo instance e Guestit.
+    //Kur krijohet nje GUEST i ri, Librarise i shtohet ne ArrayList listofGuests kjo (this) instance e Guestit.
     //Kjo nuk ndodh nese krijohet nje Admin
     public Guest(String username, String userID, String password, Role userRole) {
         super(username, userID, password, userRole);
@@ -28,7 +28,7 @@ public class Guest extends User{
     //shikon ne listen reservedBooks te User'it, dhe verifikon qe mos te jete e mundur rezervimi i nje librit shume here.
     public void reserveBook(Book book) {
         if(!Library.getBooks().contains(book)){
-            System.out.println("This book is not in the database.");
+            System.out.println("We're sorry, this book is not in our library.");
         }
         else if (!book.isAvailable()) {
             System.out.println("Sorry, this book is not available for reservation.");
@@ -45,9 +45,9 @@ public class Guest extends User{
         if (reservedBooks.contains(book)){
             reservedBooks.remove(book);
             book.setAvailability(true);
-            System.out.println("Book unreserved succesfully.");
+            System.out.println("Book unreserved successfully.");
         } else {
-            System.out.println("Book was not reserved in the first place.");
+            System.out.println("This book was not reserved in the first place.");
         }
     }
 
@@ -74,7 +74,7 @@ public class Guest extends User{
                 }
                 borrowedBooks.remove(borrowedBook);
                 book.setAvailability(true);
-                System.out.println("Book returned successfully.");
+                System.out.println("Book returned successfully. Hope you had a great read!");
                 return;
             }
         }
